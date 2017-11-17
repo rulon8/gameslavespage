@@ -1,4 +1,48 @@
+-----Hacer lo de GIT
 git add -A
 git commit -m "Longhi es un feeder"
 git pull
 git push
+
+-----Vistas con CRUD
+Post 
+Index   /blog
+Show    /post/id
+New     /post/new
+Create  está
+Edit    /post/edit?=id
+Update  está
+Delete  está
+
+Usuario
+Nada
+
+Juego                       
+Index   /games
+Show    /games/id
+New     /games/new
+Create  está
+Edit    /games/edit?=id
+Update  está
+Delete  está
+
+Imagen                      En veremos
+Show    /image/id
+New     /image/new
+Create  está
+Edit    /image/edit?=id
+Update  está
+Delete  está
+
+MainController              
+Main        /               DEFINIR
+Developing  /developing
+Contact     /contact
+Us          /us
+login       /login
+logout      /logout
+search      En Veremos
+
+vista de menu               DEFINIR
+
+vista de footer             DEFINIR
