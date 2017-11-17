@@ -1,3 +1,9 @@
+-----Correr rails aquí
+rails s -b '0.0.0.0' -p '8080'
+
+-----Correr Postgresql
+sudo service postgresql start
+
 -----Hacer lo de GIT
 git add -A
 git commit -m "Longhi es un feeder"
@@ -5,7 +11,7 @@ git pull
 git push
 
 -----Vistas con CRUD
-Post 
+Post                        Juan
 Index   /blog
 Show    /post/id
 New     /post/new
@@ -17,7 +23,7 @@ Delete  está
 Usuario
 Nada
 
-Juego                       
+Juego                       Longhi
 Index   /games
 Show    /games/id
 New     /games/new
@@ -26,16 +32,16 @@ Edit    /games/edit?=id
 Update  está
 Delete  está
 
-Imagen                      En veremos
+Imagen  En veremos
 Show    /image/id
 New     /image/new
 Create  está
 Edit    /image/edit?=id
 Update  está
 Delete  está
-
-MainController              
-Main        /               DEFINIR
+                            Prioridad           Controlador        Vista
+MainController
+Main        /               DEFINIR                 X
 Developing  /developing
 Contact     /contact
 Us          /us
@@ -46,3 +52,5 @@ search      En Veremos
 vista de menu               DEFINIR
 
 vista de footer             DEFINIR
+
+Añadir columna in_front_page
