@@ -44,10 +44,10 @@ MainController
 Main        /               DEFINIR                 X
 Developing  /developing
 Contact     /contact
-Us          /us
-login       /login
-logout      /logout
-search      En Veremos
+About       /about
+Login       /login
+Logout      /logout
+Search      En Veremos
 
 vista de menu               DEFINIR
 

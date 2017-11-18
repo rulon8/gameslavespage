@@ -12,15 +12,15 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
-//= require bootstrap.bundle.min
-//= require contactform
-//= require counterup.min
-//= require easing.min
-//= require hoverIntent
-//= require jquery-migrate.min
 //= require jquery.min
-//= require superfish.min
-//= require waypoints.min
+//= require jquery-migrate.min
+//= require bootstrap.bundle.min
+//= require easing.min
 //= require wow.min
+//= require waypoints.min
+//= require counterup.min
+//= require hoverIntent
+//= require superfish.min
+//= require contactform
 //= require main
+//= require_tree .
