@@ -13,10 +13,10 @@ git push
 -----Vistas con CRUD
 Post                        Juan
 Index   /blog
-Show    /post/id
-New     /post/new
+Show    /posts/id
+New     /posts/new
 Create  está
-Edit    /post/edit?=id
+Edit    /post/id/edit
 Update  está
 Delete  está
 
@@ -28,15 +28,15 @@ Index   /games
 Show    /games/id
 New     /games/new
 Create  está
-Edit    /games/edit?=id
+Edit    /games/id/edit
 Update  está
 Delete  está
 
 Imagen  En veremos
-Show    /image/id
-New     /image/new
+Show    /images/id
+New     /images/new
 Create  está
-Edit    /image/edit?=id
+Edit    /image/id/edit
 Update  está
 Delete  está
                             Prioridad           Controlador        Vista
