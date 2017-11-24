@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/' => 'main#main'
   resources :posts, except: :index
   get '/blog' => 'posts#index'
+  get '/about' => 'main#about', as: 'about_path'
+  get '/users/creaTemp' => 'users#creaTemp'
 end

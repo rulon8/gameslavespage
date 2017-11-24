@@ -10,6 +10,10 @@ git commit -m "Longhi es un feeder"
 git pull
 git push
 
+-----Comandos postresql
+psql -U ubuntu -d gameslavespage_development -c "INSERT INTO users VALUES (2, 'Rulon','pass','giancalonghi@hotmail.com', '2017-11-24', '2017-11-24')"
+psql -U ubuntu -d gameslavespage_development -c 'SELECT * FROM users'
+
 -----Vistas con CRUD
 Post                        Juan
 Index   /blog
@@ -55,12 +59,3 @@ vista de footer             DEFINIR
 
 Añadir columna in_front_page
 
-
-
-<div class="form-group"> 
-Nombra la imágen<br /> <%= f.text_field @nombreimagen, :class => "form-control" %> <br /> 
-                </div>
-                <div class="form-group">
-                Describe la imágen<br />
-                <%= f.text_area @descripimagen, :class => "form-control" %> <br />
-                </div>

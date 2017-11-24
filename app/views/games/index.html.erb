@@ -1,5 +1,54 @@
-<h1>Games#index</h1>
-<p>Find me in app/views/games/index.html.erb</p>
-<% @games.each do |g| %>
-<%= g[:name] %>
-<% end %>
+<div class="container wow fadeInUp titulo">
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+      <div class="section-header">
+        <h1 class="section-title">Our games</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <% contador = 0 %>
+  <% @games.each do |g| %>
+    <% if contador % 2 == 0 %>
+      <div class="row wow fadeInLeft">
+        <div class="col-xs-12 col-md-12">
+          <hr>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <img src="<%= image_path("about-img.jpg") %>"/>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <h2><%= link_to g[:name], g %></h2>
+              <br>
+              <%= g[:description] %>
+            </div>
+          </div>
+          <% if contador == @total -1 %>
+            <hr>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div class="row wow fadeInRight">
+        <div class="col-xs-12 col-md-12">
+          <hr>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <h2><%= link_to g[:name], g %></h2>
+              <br>
+              <%= g[:description] %>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <img src="<%= image_path("about-img.jpg") %>"/>
+            </div>
+          </div>
+          <% if contador == @total -1 %>
+            <hr>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <% contador = contador + 1 %>
+  <% end %>
+</div>

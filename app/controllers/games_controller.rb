@@ -1,9 +1,11 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.all
+    @games = Game.all.order(id: :desc)
+    @total = Game.count
   end
 
   def show
+    @game = Game.find(params[:id])
   end
 
   def new
