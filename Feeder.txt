@@ -15,10 +15,10 @@ Post                        Juan
 Index   /blog
 Show    /posts/id
 New     /posts/new
-Create  está
+Create  /posts
 Edit    /post/id/edit
-Update  está
-Delete  está
+Update  /posts/id
+Destroy /posts/id
 
 Usuario
 Nada
@@ -27,18 +27,18 @@ Juego                       Longhi
 Index   /games
 Show    /games/id
 New     /games/new
-Create  está
+Create  /games
 Edit    /games/id/edit
-Update  está
-Delete  está
+Update  /games/id
+Destroy /games/id
 
 Imagen  En veremos
 Show    /images/id
 New     /images/new
-Create  está
+Create  /images
 Edit    /image/id/edit
-Update  está
-Delete  está
+Update  /images/id
+Destroy /images/id
                             Prioridad           Controlador        Vista
 MainController
 Main        /               DEFINIR                 X
@@ -54,3 +54,13 @@ vista de menu               DEFINIR
 vista de footer             DEFINIR
 
 Añadir columna in_front_page
+
+
+
+<div class="form-group"> 
+Nombra la imágen<br /> <%= f.text_field @nombreimagen, :class => "form-control" %> <br /> 
+                </div>
+                <div class="form-group">
+                Describe la imágen<br />
+                <%= f.text_area @descripimagen, :class => "form-control" %> <br />
+                </div>

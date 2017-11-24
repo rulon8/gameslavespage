@@ -1,0 +1,46 @@
+<div class="container wow fadeInUp titulo">
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+      <div class="section-header">
+        <h1 class="section-title">Nuevo Juego</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="nuevo-juego">
+  <div class="container wow fadeInUp">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-8">
+        <div class="form">
+          <div id="errormessage"></div>
+          <%= form_for(@game, html: {multiple: true}) do |f| %>
+          <!--form action="" method="post" role="form" class="contactForm"-->
+            <div class="form-group">
+              <%= f.text_field :name, :class => "form-control", :placeholder => "Nombre" %>
+              <!--input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="required" data-msg="Este campo es obligatorio" /-->
+              <!--div class="validation"></div-->
+            </div>
+            <div class="form-group">
+              <%= f.text_area :description, :class => "form-control", :placeholder => "Descripcion", :rows => "5" %>
+              <!--textarea class="form-control" name="description" rows="5" id="description" placeholder="Descripcion" data-rule="required" data-msg="Este campo es obligatorio"></textarea>
+              <div class="validation"></div-->
+            </div>
+            <div class="form-group">
+              <%= f.text_area :information, :class => "form-control", :placeholder => "Informacion", :rows => "5" %>
+              <!--textarea class="form-control" name="information" rows="5" id="information" placeholder="Informacion" data-rule="required" data-msg="Este campo es obligatorio" ></textarea>
+              <div class="validation"></div-->
+            </div>
+            <div class="form-group">
+              <%= f.text_area :requirements, :class => "form-control", :placeholder => "Requerimientos", :rows => "5" %>
+              <!--textarea class="form-control" name="requirements" rows="5" placeholder="Requerimientos" data-rule="required" data-msg="Este campo es obligatorio"></textarea>
+              <div class="validation"></div-->
+            </div>
+            <%= f.submit "Crear juego" %>
+            <!--div class="text-center"><button type="submit">Crear juego</button></div-->
+          <!--/form-->
+          <% end %>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>

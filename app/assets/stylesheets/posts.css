@@ -1,0 +1,21 @@
+.titulo {
+  margin-top: 130px;
+  margin-bottom: 40px; }
+
+#nuevo-post .form input, #nuevo-post .form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px; }
+
+#nuevo-post .form input[type="submit"] {
+  background: #2dc997;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  margin-bottom: 40px; }
+
+#nuevo-post .form input[type="submit"]:hover {
+  background: #51d8ad; }
+
+/*# sourceMappingURL=posts.css.map */
