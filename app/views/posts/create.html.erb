@@ -2,3 +2,8 @@
 <p><%= @titulo %> </p>
 <p>Find me in app/views/posts/create.html.erb</p>
 <p><%= @titulo %> </p>
+<p><%= @post[:title] %> </p>
+<p><%= @post[:description] %> </p>
+<p><%= @post[:date] %> </p>
+<p><%= DateTime.now.to_formatted_s(:db) %> </p>
+<p> <%= @post[:user_id] %> </p>

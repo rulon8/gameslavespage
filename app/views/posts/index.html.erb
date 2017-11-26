@@ -7,17 +7,22 @@
     </div>
   </div>
 </div>
-<div class="container wow fadeInUp titulo">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-md-8">
-      <% @users.each do |g| %>
-        <hr>
-        <div class="col-xs-12 col-md-4">
-          <img/>
+<div class="container">
+  <% @posts.order("created_at DESC").limit(1).each do |g| %>
+      <div class="row wow fadeInLeft">
+        <div class="col-xs-12 col-md-12">
+          <hr>
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+              <img src="<%= image_path("Placeholder.png") %>"/>
+            </div>
+            <div class="col-xs-12 col-md-8">
+              <h2><%= link_to g[:title], g %></h2>
+              <br>
+              <%= g[:description] %>
+            </div>
+          </div>
         </div>
-        <%= g[:username] %>
-        <%= g[:email] %>
-      <% end %>
-    </div>
-  </div>
+      </div>
+  <% end %>
 </div>

@@ -59,3 +59,6 @@ vista de footer             DEFINIR
 
 Añadir columna in_front_page
 
+Pendiente
+Carrusel, pagina principal, formulario de contacto, juegos en desarrollo, editar y borrar juegos, CRUD de imagenes, editar y borrar posts,
+autenticacion, boton de donaciones, links a redes sociales, footer
