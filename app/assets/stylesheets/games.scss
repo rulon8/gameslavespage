@@ -6,13 +6,13 @@
   margin-bottom: 40px;
 }
 
-#nuevo-juego .form input, #nuevo-juego .form textarea {
+#nuevo-juego .form input, #nuevo-juego .form textarea, #editar-juego .form input, #editar-juego .form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-#nuevo-juego .form input[type="submit"] {
+#nuevo-juego .form input[type="submit"], #editar-juego .form input[type="submit"] {
   background: #2dc997;
   border: 0;
   padding: 10px 24px;
@@ -21,7 +21,7 @@
   margin-bottom: 40px;
 }
 
-#nuevo-juego .form input[type="submit"]:hover {
+#nuevo-juego .form input[type="submit"]:hover, #editar-juego .form input[type="submit"]:hover {
   background: #51d8ad;
 }
 

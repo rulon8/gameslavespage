@@ -8,9 +8,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-    
+    <meta name="turbolinks-cache-control" content="no-cache">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-   
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   
     <!-- Favicons -->
     <link href="<%= image_path('favicon.png') %>" rel="icon">
@@ -18,8 +18,9 @@
   
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
-
-  <body>
+    
+  <head>
+  <body id="body">
     <!--#menu-->
     <header id="header">
       <div class="container">
@@ -33,21 +34,15 @@
         <nav id="nav-menu-container">
           <ul class="nav-menu">
             <li class="menu-active"><a href="/">Home</a></li>
-            <li><a href="/in-development">In Development</a></li>
+            <li><%= link_to "In Development", in_development_path %></li>
             <li><%= link_to "Games", games_path %></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><%= link_to "Blog", blog_path %></li>
             <li><%= link_to "About Us", about_path %></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li><%= link_to "Contact Us", contact_path %></li>
           </ul>
         </nav><!-- #nav-menu-container -->
       </div>
     </header><!-- #header -->
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
     <%= yield %>
     <!--#footer-->
     <footer id="footer">
@@ -73,6 +68,16 @@
       </div>
     </footer><!-- #footer -->
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery-migrate.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap.bundle.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'easing.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'wow.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'waypoints.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'counterup.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'hoverIntent', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'superfish.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'contactform', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'main', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

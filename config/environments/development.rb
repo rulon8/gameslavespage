@@ -27,6 +27,12 @@ Rails.application.configure do
   end
 
   config.action_mailer.default_url_options = { host: '0.0.0.0', port: 8080 }
+  
+  #config.action_mailer.delivery_method = :file
+  
+  #config.action_mailer.file_settings = { :location => Rails.root.join('tmp/mail') }
+  
+  config.action_mailer.perform_deliveries = true
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

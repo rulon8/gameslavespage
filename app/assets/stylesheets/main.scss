@@ -4,3 +4,29 @@
 img {
   margin-bottom: 30px;
 }
+
+button, #contacto .form input[type="submit"] {
+  background: #2dc997;
+  border: 0;
+  color: #fff;
+  transition: 0.4s;
+}
+
+button:hover, #contacto .form input[type="submit"] {
+  background: #51d8ad;
+}
+
+#contacto .form input[type="submit"] {
+  padding: 10px 24px;
+  margin-bottom: 40px;
+}
+
+button {
+  padding: 10px 0px;
+  margin-bottom: 10px;
+}
+
+button a {
+  color: #fff;
+  padding: 12px 24px;
+}

@@ -11,15 +11,4 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
-//= require jquery.min
-//= require jquery-migrate.min
-//= require bootstrap.bundle.min
-//= require easing.min
-//= require wow.min
-//= require waypoints.min
-//= require counterup.min
-//= require hoverIntent
-//= require superfish.min
-//= require contactform
-//= require main
+

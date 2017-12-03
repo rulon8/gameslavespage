@@ -1,0 +1,32 @@
+<div class="container wow fadeInUp titulo">
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+      <div class="section-header">
+        <h1 class="section-title">Forgot your password?</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="nuevo-password">
+  <div class="container wow fadeInUp">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-8">
+        <div class="form">
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= devise_error_messages! %>
+          
+            <div class="field form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+            </div>
+          
+            <div class="actions form-group">
+              <%= f.submit "Send me reset password instructions" %>
+            </div>
+          <% end %>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>

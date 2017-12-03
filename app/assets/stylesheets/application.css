@@ -17,3 +17,7 @@
  *= require animate
  *= require style
  */
+.notice {
+  margin-top: 0;
+  margin-bottom: 0;
+}

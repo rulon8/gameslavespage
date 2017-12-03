@@ -1,0 +1,38 @@
+.titulo {
+  margin-top: 130px;
+  margin-bottom: 40px;
+}
+
+#nueva-sesion .form input, #nueva-sesion .form textarea, #nueva-cuenta .form input, #nueva-cuenta .form textarea,
+#nuevo-password .form input, #nuevo-password .form textarea, #cambio-password .form input, #cambio-password .form textarea{
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+#nueva-sesion .form input[type="submit"], #nueva-cuenta .form input[type="submit"], #nuevo-password .form input[type="submit"],
+#cambio-password .form input[type="submit"] {
+  background: #2dc997;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+}
+
+#nueva-sesion .form input[type="submit"]:hover, #nueva-cuenta .form input[type="submit"]:hover, #nuevo-password .form input[type="submit"]:hover,
+#cambio-password .form input[type="submit"]:hover {
+  background: #51d8ad;
+}
+
+#nueva-sesion .links, #nueva-cuenta .links, #nueva-sesion .links, #nuevo-password .links, #cambio-password .links, #nueva-cuenta .links {
+  margin-bottom: 40px;
+}
+
+img {
+  width: 100%;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

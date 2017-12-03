@@ -1,0 +1,35 @@
+<div class="container wow fadeInUp titulo">
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+      <div class="section-header">
+        <h1 class="section-title">Contact us</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="contacto">
+  <div class="container wow fadeInUp">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-8">
+        <div class="form">
+          <div id="errormessage"></div>
+          <%= form_tag('/contact', html: {multiple: true, method: 'post'}) do %>
+            <div class="form-group">
+              <%= text_field_tag :name, nil, :class => "form-control", :placeholder => "Name" %>
+            </div>
+            <div class="form-group">
+              <%= email_field :email, nil, :class => "form-control", :placeholder => "Email" %>
+            </div>
+            <div class="form-group">
+              <%= text_field_tag :subject, nil, :class => "form-control", :placeholder => "Subject" %>
+            </div>
+            <div class="form-group">
+              <%= text_area_tag :message, nil, :class => "form-control", :placeholder => "Message", :rows => "10" %>
+            </div>
+            <%= submit_tag "Send message" %>
+          <% end %>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>

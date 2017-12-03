@@ -7,3 +7,17 @@
 <p><%= @post[:date] %> </p>
 <p><%= DateTime.now.to_formatted_s(:db) %> </p>
 <p> <%= @post[:user_id] %> </p>
+ <div>
+                Etiquetas <br />
+                <% @etiqTem.each do |g| %>
+                   <%= g %>
+                <% end %>
+              </div>
+              <div>
+                Categorías <br />
+                <% @categTem.each do |c| %>
+                   <%= c %>
+                <% end %>
+              </div>
+<hr />
+<%= params.inspect %>
