@@ -21,6 +21,14 @@
     
   <head>
   <body id="body">
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <!--#menu-->
     <header id="header">
       <div class="container">
@@ -33,12 +41,15 @@
   
         <nav id="nav-menu-container">
           <ul class="nav-menu">
-            <li class="menu-active"><a href="/">Home</a></li>
+            <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "In Development", in_development_path %></li>
             <li><%= link_to "Games", games_path %></li>
             <li><%= link_to "Blog", blog_path %></li>
             <li><%= link_to "About Us", about_path %></li>
             <li><%= link_to "Contact Us", contact_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <% end %>
           </ul>
         </nav><!-- #nav-menu-container -->
       </div>
@@ -53,8 +64,23 @@
       </div>
   
       <div class="container">
-        <div class="copyright">
-          &copy; Copyright <strong>Regna</strong>. All Rights Reserved
+        <div class="row justify-content-center">
+          <div class="col-xs-12">
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xs-12">
+            <div class="copyright">
+              &copy; Copyright <strong>Regna</strong>. All Rights Reserved
+            </div>
+          </div>
         </div>
         <div class="credits">
           <!--

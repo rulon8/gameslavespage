@@ -17,11 +17,11 @@
 
 #nuevo-post .form input[type="submit"]:hover {
   background: #51d8ad; }
-  
-  img {
-  width: 100%; }
 
-hr {
-  margin-top: 2rem;
-  margin-bottom: 2rem; }
+h5, h6 {
+  display: inline; }
+
+.categorias h6, .etiquetas h6 {
+  padding: 0 0.5em 0 0.5em; }
+
 /*# sourceMappingURL=posts.css.map */

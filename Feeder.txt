@@ -22,7 +22,7 @@ New     /posts/new                   X
 Create  /posts                       X
 Edit    /post/id/edit
 Update  /posts/id
-Destroy /posts/id
+Destroy /posts/id                    X
 
 Usuario
 Nada
@@ -32,9 +32,9 @@ Index   /games                  X
 Show    /games/id               X
 New     /games/new              X
 Create  /games                  X
-Edit    /games/id/edit
-Update  /games/id
-Destroy /games/id
+Edit    /games/id/edit          X
+Update  /games/id               X
+Destroy /games/id               X
 
 Imagen  En veremos
 Show    /images/id
@@ -50,19 +50,19 @@ Developing  /developing
 Contact     /contact                                X               X
 About       /about                                  X               X
 Login       /login                                  X               X
-Logout      /logout
+Logout      /logout                                 X               X
 Search      En Veremos
 
 vista de menu               DEFINIR                 X               X
 
-vista de footer             DEFINIR
+vista de footer             DEFINIR                 X               X
 
 Añadir columna in_front_page
 
 Pendiente
 
 Prioridad:
-Pagina principal, juegos en desarrollo, CRUD de imagenes, editar y borrar posts, links a redes sociales, footer, comentarios en posts
+CRUD de imagenes, editar posts, estilo de paginacion, estilo de botones
 
 No prioridad:
-Carrusel, formulario de contacto (pruebas)
+Carrusel, formulario de contacto (pruebas), Visitas

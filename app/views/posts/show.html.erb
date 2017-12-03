@@ -38,7 +38,21 @@
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
     </div>
   </div>
-</div>
 <hr />
+ <% if user_signed_in? %>
+    <div class="row wow fadeInLeft">
+        <div class="col-xs-12 col-md-12">
+            <button type="button"><%= link_to "Editar Post", edit_post_path(@post[:id])%></button>
+            <button type="button"><%= link_to "Eliminar Post", post_path(@post[:id]), method: :delete%></button>
+        </div>
+    </div>
+      <hr />
+  <% end %>
+  <div class="row wow fadeInLeft">
+    <div class="col-xs-12 col-md-12">
+      <div class="fb-comments" data-href="https://gameslaves-rulon.c9users.io/posts/<%= @post[:id] %>" data-width="100%" data-numposts="5"></div>
+    </div>
+  </div>
 <%= link_to("Previous Post", @post.previous_post) %>
 <%= link_to("Next Post", @post.next_post) %>
+</div>
