@@ -3,7 +3,9 @@ class PicturesController < ApplicationController
   def index
     @pictures = Picture.page(params[:page]).per(5)
   end
-    
+  def show
+    redirect_to action: "index"
+  end
   def new
     @picture = Picture.new
     @pictures = Picture.all

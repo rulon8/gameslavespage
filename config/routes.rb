@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :games
   root to: 'main#main'
   resources :posts, except: :index
-  resources :pictures, except: :show
+  resources :pictures
   get '/blog' => 'posts#index', as: 'blog'
   get '/about' => 'main#about', as: 'about'
   get '/in-development' => 'main#in_development', as: 'in_development'

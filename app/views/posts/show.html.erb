@@ -48,6 +48,10 @@
       <div class="fb-comments" data-href="https://gameslaves-rulon.c9users.io/posts/<%= @post[:id] %>" data-width="100%" data-numposts="5"></div>
     </div>
   </div>
-<%= link_to("Previous Post", @post.previous_post) %>
-<%= link_to("Next Post", @post.next_post) %>
+  <div class="row wow fadeInLeft">
+    <div class="col-xs-12 col-md-12 paginacion">
+      <button><%= link_to("<< Previous Post", @post.previous_post) %></button>
+      <button><%= link_to("Next Post >>", @post.next_post) %></button>
+    </div>
+  </div>
 </div>

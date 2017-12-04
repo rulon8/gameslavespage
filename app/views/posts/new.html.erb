@@ -42,14 +42,14 @@
                 Descripción <br />
                 <%= f.text_area :description, :class => "form-control" %> 
               </div>
-              <div>
+              <div class="form-group">
                 Etiquetas <br />
                 <% @etiquetas.each do |g| %>
                    <%= check_box_tag g %>
                    <%= label_tag g %>
                 <% end %>
               </div>
-              <div>
+              <div class="form-group">
                 Categorías <br />
                 <% @categorias.each do |c| %>
                    <%= check_box_tag c %>

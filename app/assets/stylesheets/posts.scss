@@ -21,8 +21,9 @@
   margin-bottom: 40px;
 }
 
-#nuevo-post .form input[type="submit"]:hover {
+button a:hover, #nuevo-post .form input[type="submit"]:hover {
   background: #51d8ad;
+  color: #fff;
 }
 
 h5, h6 {
@@ -34,5 +35,33 @@ h5, h6 {
 }
 
 .paginacion {
+  display: inline-block;
   text-align: center;
+}
+
+.paginacion .active .page-link {
+  background-color: #2dc997;
+  border-color: #2dc997;
+  transition: 0.4s;
+}
+
+.paginacion .page-link {
+  color: #2dc997;
+  transition: 0.4s;
+}
+
+.paginacion .active .page-link:hover {
+  background: #51d8ad;
+  border-color: #51d8ad;
+  color: #fff;
+}
+
+.paginacion .page-link:hover {
+  background: #2dc997;
+  border-color: #2dc997;
+  color: #fff;
+}
+
+div.paginacion {
+  margin-bottom: 30px;
 }
