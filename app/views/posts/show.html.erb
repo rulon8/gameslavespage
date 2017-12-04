@@ -20,22 +20,17 @@
   </div>
   <div class="row wow fadeInUp">
     <div class="col-xs-12 col-md-12">
-      <img src="<%= image_path("Placeholder.png") %>" />
+       <% @pictures = Picture.where("post_id" => @post.id) %>
+       <% if @pictures.empty? %>
+          <img src="<%= image_path("Placeholder.png") %>"/>
+       <% else %>
+          <img src="<%= image_path(@pictures[0].image) %>"/>
+       <% end %>
     </div>
   </div>
   <div class="row wow fadeInUp">
     <div class="col-xs-12 col-md-12">
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
-    </div>
-  </div>
-  <div class="row wow fadeInUp">
-    <div class="col-xs-12 col-md-12">
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
-    </div>
-  </div>
-  <div class="row wow fadeInUp">
-    <div class="col-xs-12 col-md-12">
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
+      <p><%= @post.description %></p>
     </div>
   </div>
 <hr />

@@ -1,2 +1,68 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="container wow fadeInUp titulo">
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+      <div class="section-header">
+        <h1 class="section-title">Crear Nuevo Post</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="nuevo-post">
+  <div class="container wow fadeInUp">
+    <div class="row">
+      <div class="col-xs-12 col-md-10">
+        <% if notice %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert"><%= alert %></p>
+        <% end %>  
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-10">
+        <div class="form">
+          <%= form_for(@post, html: {multiple: true}) do |f| %>
+            <% if @post.errors.any? %>
+              <div id ="error_explanation">
+                <h2> <%= pluralize(@post.error.count, "error") %> Ha ocurrido un error</h2>
+                <ul>
+                  <% @post.errors.full_message.each do |msg| %>
+                  <li> <%= msg %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class=""> 
+              <div class="form-group">
+                Título <br />
+                <%= f.text_field :title, :class => "form-control", :value => @post[:title] %> 
+              </div>
+              <div class="form-group">
+                Descripción <br />
+                <%= f.text_area :description, :class => "form-control", :value => @post[:description] %> 
+              </div>
+              <div>
+                Etiquetas <br />
+                <% @etiquetas.each do |g| %>
+                   <%= check_box_tag g %>
+                   <%= label_tag g %>
+                <% end %>
+              </div>
+              <div>
+                Categorías <br />
+                <% @categorias.each do |c| %>
+                   <%= check_box_tag c %>
+                   <%= label_tag c %>
+                <% end %>
+              </div>
+              <div class="action">
+                <%= f.submit @nombre %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>

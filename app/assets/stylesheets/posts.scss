@@ -6,7 +6,7 @@
   margin-bottom: 40px;
 }
 
-#nuevo-post .form input, #nuevo-post .form textarea {
+#nuevo-post .form input, #nuevo-post .form textarea, #editar-post .form input, #editar-post .form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
@@ -31,4 +31,8 @@ h5, h6 {
 
 .categorias h6, .etiquetas h6 {
   padding: 0 0.5em 0 0.5em;
+}
+
+.paginacion {
+  text-align: center;
 }

@@ -1,0 +1,70 @@
+<div class="container wow fadeInUp titulo">
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+      <div class="section-header">
+        <h1 class="section-title">Crear Nueva Imagen</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="nueva-imagen">
+  <div class="container wow fadeInUp">
+    <div class="row">
+      <div class="col-xs-12 col-md-10">
+        <% if notice %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert"><%= alert %></p>
+        <% end %>  
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-10">
+        <div class="form">
+          <%= form_for(@picture, html: {multiple: true}) do |f| %>
+            <% if @picture.errors.any? %>
+              <div id ="error_explanation">
+                <h2> <%= pluralize(@picture.error.count, "error") %> Ha ocurrido un error</h2>
+                <ul>
+                  <% @picture.errors.full_message.each do |msg| %>
+                  <li> <%= msg %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class=""> 
+              <div class="form-group">
+                Nombre <br />
+                <%= f.text_field :name, :class => "form-control" %> 
+              </div>
+              <div class="form-group">
+                Descripción <br />
+                <%= f.text_area :description, :class => "form-control" %> 
+              </div>
+              <div class="form-group">
+                Imagen <br />
+                <%= f.file_field :image, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                En página principal <br />
+                <%= f.check_box :in_front_page, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                Juego <br />
+                <%= select_tag 'g_id', options_for_select(@games.collect{ |g| [g.name, g.id] }), :include_blank => true  %>
+              </div>
+              <div class="form-group">
+                Post <br />
+                <%= select_tag 'p_id', options_for_select(@posts.collect{ |u| [u[0], u[1]] }), :include_blank => true %>
+              </div>
+              <div class="action">
+                <%= f.submit @nombre %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>

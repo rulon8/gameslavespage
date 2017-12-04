@@ -1,12 +1,13 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-    @games = Game.all.order(id: :desc)
+    @games = Game.where.not(id: 6).order(id: :desc)
     @total = Game.count
   end
 
   def show
     @game = Game.find(params[:id])
+    @pictures = Picture.where("game_id" => @game.id)
   end
 
   def new
@@ -39,7 +40,17 @@ class GamesController < ApplicationController
 
   def destroy
     @game = Game.find(params[:id])
-    @game.destroy
-    redirect_to action: "index"
+    if @game[:id] == 6
+      redirect_to action: "index"
+    else
+      @game.destroy
+      redirect_to action: "index"
+    end
+  end
+  
+  def carrusel
+  end
+  
+  def prueba
   end
 end

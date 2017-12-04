@@ -16,6 +16,7 @@
  *= require font-awesome
  *= require animate
  *= require style
+ *= require slippry
  */
 .notice {
   margin-top: 0;

@@ -1,0 +1,53 @@
+<div class="container wow fadeInUp titulo">
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+      <div class="section-header">
+        <h1 class="section-title">Imágenes</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <% if notice %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert"><%= alert %></p>
+        <% end %>  
+      </div>
+  </div>
+  <% @pictures.order("created_at DESC").each do |g| %>
+      <div class="row wow fadeInLeft">
+        <div class="col-xs-12 col-md-12">
+          <hr>
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+              <img src="<%= image_path(g[:image]) %>"/>
+            </div>
+            <div class="col-xs-12 col-md-8">
+              <h2><%= link_to g[:title], g %></h2>
+              <%= g[:description].slice(0,150) %>...
+              <button type="button"><%= link_to "Eliminar Imagen", picture_path(g[:id]), method: :delete %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  <hr />
+  <% if user_signed_in? %>
+    <div class="row wow fadeInLeft">
+        <div class="col-xs-12 col-md-12">
+            <button type="button"><%= link_to "Nuevo", new_picture_path %></button>
+        </div>
+    </div>
+  <% end %>
+  <div class="row wow fadeInUp justify-content-center">
+    <div class="col-xs-12 col-md-12">
+      <%= paginate @pictures %>
+      <%= page_entries_info @pictures %>
+    </div>
+  </div>
+  
+</div>

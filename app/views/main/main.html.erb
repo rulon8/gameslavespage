@@ -10,10 +10,12 @@
   <section id="hero">
     <div class="hero-container">
       <h1>Welcome to GameSlaves</h1>
-      <h2>We are team of talanted designers making websites with Bootstrap</h2>
-      <a href="#about" class="btn-get-started">Get Started</a>
+      <h2>We are a team of game developers giving our first steps in this creative area, come and join us!</h2>
+       <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
     </div>
   </section><!-- #hero -->
+
+  
 
   <main id="main">
 
@@ -26,9 +28,9 @@
 
           <div class="col-md-8 content wow fadeInUp a">
             <h2 class="title"><%= link_to "In Development", in_development_path %></h2>
-            <img src="<%= image_path('Placeholder.png') %>" />
+            <img src="<%= image_path('Chloe.png') %>" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Hi guys! We are developing our next game. It would be a platformer action game with lots of puzzles, skills, cool art and so much more.
             </p>
           </div>
           <div class="col-md-1">
@@ -47,7 +49,12 @@
             <% @posts.each do |pos| %>
               <div class="row">
                 <div class="col-xs-12">
+                  <% @pictures = Picture.where("post_id" => pos[:id]) %>
+                  <% if @pictures.empty? %>
                   <img src="<%= image_path("Placeholder.png") %>"/>
+                  <% else %>
+                  <img src="<%= image_path(@pictures[0].image) %>"/>
+                  <% end %>
                   <h3><%= link_to pos[:title], pos %></h3>
                   <hr>
                 </div>

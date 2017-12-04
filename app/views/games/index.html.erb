@@ -33,7 +33,12 @@
           <hr>
           <div class="row">
             <div class="col-xs-12 col-md-4">
+              <% @pictures = Picture.where("game_id" => g[:id]) %>
+              <% if @pictures.empty? %>
               <img src="<%= image_path("Placeholder.png") %>"/>
+              <% else %>
+              <img src="<%= image_path(@pictures[0].image) %>"/>
+              <% end %>
             </div>
             <div class="col-xs-12 col-md-8">
               <h2><%= link_to g[:name], g %></h2>
@@ -57,7 +62,12 @@
               <%= g[:description] %>
             </div>
             <div class="col-xs-12 col-md-4">
+              <% @pictures = Picture.where("game_id" => g[:id]) %>
+              <% if @pictures.empty? %>
               <img src="<%= image_path("Placeholder.png") %>"/>
+              <% else %>
+              <img src="<%= image_path(@pictures[0].image) %>"/>
+              <% end %>
             </div>
           </div>
           <% if contador == @total -1 %>

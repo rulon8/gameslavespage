@@ -1,3 +1,14 @@
+<% if @pictures.size > 1 %>
+  <div id="carrusel">
+      <ul id="slippry-slider">
+        <% @pictures.each do |pic| %>
+          <li>
+            <a href=""><img src="<%= image_path(pic.image) %>" ></a>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+<% end %>
 <div class="container wow fadeInUp titulo">
   <div class="row">
       <div class="col-xs-12 col-md-12">
@@ -21,6 +32,13 @@
       <h2><%= @game[:description] %></h2>
     </div>
   </div>
+  <% if @pictures.size == 1 %>
+    <div class="row wow fadeInUp">
+      <div class="col-xs-12 col-md-12">
+        <img src="<%= image_path(@pictures[0][:image]) %>" />
+      </div>
+    </div>
+  <% end %>
   <% if user_signed_in? %>
     <div class="row wow fadeInLeft">
         <div class="col-xs-12 col-md-12">

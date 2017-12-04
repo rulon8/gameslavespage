@@ -117,5 +117,19 @@ jQuery(document).ready(function( $ ) {
   });
 
 // custom code
+  $(document).ready(function() {
+      $('#slippry-slider').slippry(
+        defaults = {
+          transition: 'horizontal',
+          useCSS: true,
+          speed: 5000,
+          pause: 3000,
+          initSingle: false,
+          auto: true,
+          preload: 'visible',
+          pager: false,
+        }
 
+      )
+    });
 });

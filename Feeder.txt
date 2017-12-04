@@ -20,8 +20,8 @@ Index   /blog                        X
 Show    /posts/id                    X
 New     /posts/new                   X
 Create  /posts                       X
-Edit    /post/id/edit
-Update  /posts/id
+Edit    /post/id/edit                X
+Update  /posts/id                    X
 Destroy /posts/id                    X
 
 Usuario
@@ -62,7 +62,7 @@ Añadir columna in_front_page
 Pendiente
 
 Prioridad:
-CRUD de imagenes, editar posts, estilo de paginacion, estilo de botones
+CRUD de imagenes, estilo de paginacion, estilo de botones
 
 No prioridad:
-Carrusel, formulario de contacto (pruebas), Visitas
+formulario de contacto (pruebas), Visitas

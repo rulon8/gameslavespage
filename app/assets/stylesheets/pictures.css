@@ -1,0 +1,17 @@
+#nueva-imagen .form input, #nueva-imagen .form textarea, #editar-imagen .form input, #editar-imagen .form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px; }
+
+#nueva-imagen .form input[type="submit"], #editar-imagen .form input[type="submit"] {
+  background: #2dc997;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  margin-bottom: 40px; }
+
+#nueva-imagen .form input[type="submit"]:hover, #editar-imagen .form input[type="submit"]:hover {
+  background: #51d8ad; }
+
+/*# sourceMappingURL=pictures.css.map */
