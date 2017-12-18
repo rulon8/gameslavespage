@@ -1,4 +1,4 @@
-<div class="container wow fadeInUp titulo">
+<div class="container titulo">
   <div class="row justify-content-center">
     <div class="col-xs-12">
       <div class="section-header">
@@ -8,7 +8,7 @@
   </div>
 </div>
 <section id="editar-juego">
-  <div class="container wow fadeInUp">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-md-8">
         <% if notice %>
@@ -25,16 +25,19 @@
           <div id="errormessage"></div>
           <%= form_for(@game) do |f| %>
             <div class="form-group">
-              <%= f.text_field :name, :class => "form-control", :value => @game[:name] %>
+              <%= f.text_field :name, :class => "form-control", :value => @game[:name], :placeholder => "Nombre" %>
             </div>
             <div class="form-group">
-              <%= f.text_area :description, :class => "form-control", :value => @game[:description], :rows => "5" %>
+              <%= f.text_field :description, :class => "form-control", :value => @game[:description], :placeholder => "Descripción (texto CORTO)" %>
             </div>
             <div class="form-group">
-              <%= f.text_area :information, :class => "form-control", :value => @game[:information], :rows => "5" %>
+              <%= f.text_area :information, :class => "form-control", :value => @game[:information], :rows => "5", :placeholder => "Información" %>
             </div>
             <div class="form-group">
-              <%= f.text_area :requirements, :class => "form-control", :value => @game[:requirements], :rows => "5" %>
+              <%= f.text_area :features, :class => "form-control", :value => @game[:features], :rows => "5", :placeholder => "Lista de características" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_area :requirements, :class => "form-control", :value => @game[:requirements], :rows => "5", :placeholder => "Requerimientos" %>
             </div>
             <%= f.submit "Editar juego" %>
           <% end %>

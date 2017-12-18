@@ -1,0 +1,30 @@
+<div class="container titulo">
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+      <div class="section-header">
+        <h1 class="section-title">Nombre de usuario</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="contacto">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-8">
+        <p>Seleccione su usuario.</p>
+        <hr>
+        <div class="form">
+          <div id="errormessage"></div>
+          <%= form_tag('/usuario', html: {multiple: true, method: 'post'}) do %>
+            <div class="form-group">
+              <%= text_field_tag :username, nil, :class => "form-control", :placeholder => "Username" %>
+            </div>
+            <%= submit_tag "Send message" %>
+            <br>
+            <br>
+          <% end %>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>

@@ -1,4 +1,4 @@
-<div class="container wow fadeInUp titulo">
+<div class="container titulo">
   <div class="row justify-content-center">
     <div class="col-xs-12">
       <div class="section-header">
@@ -19,29 +19,29 @@
       </div>
   </div>
   <% if user_signed_in? %>
-    <div class="row wow fadeInLeft">
+    <div class="row">
         <div class="col-xs-12 col-md-12">
-            <button type="button"><%= link_to "Nuevo", new_game_path %></button>
+            <%= link_to "Nuevo", new_game_path, class: "button" %>
         </div>
     </div>
   <% end %>
   <% contador = 0 %>
   <% @games.each do |g| %>
     <% if contador % 2 == 0 %>
-      <div class="row wow fadeInLeft">
+      <div class="row">
         <div class="col-xs-12 col-md-12">
           <hr>
           <div class="row">
             <div class="col-xs-12 col-md-4">
               <% @pictures = Picture.where("game_id" => g[:id]) %>
               <% if @pictures.empty? %>
-              <img src="<%= image_path("Placeholder.png") %>"/>
+                <%= link_to(image_tag(image_path("Placeholder.png")), game_path(g[:name])) %>
               <% else %>
-              <img src="<%= image_path(@pictures[0].image) %>"/>
+                <%= link_to(image_tag(image_path(@pictures[0].image)), game_path(g[:name])) %>
               <% end %>
             </div>
             <div class="col-xs-12 col-md-8">
-              <h2><%= link_to g[:name], g %></h2>
+              <h2><%= link_to g[:name], game_path(g[:name]) %></h2>
               <br>
               <%= g[:description] %>
             </div>
@@ -52,36 +52,36 @@
         </div>
       </div>
     <% else %>
-      <div class="row wow fadeInRight">
+      <div class="row">
         <div class="col-xs-12 col-md-12">
           <hr>
           <div class="row">
             <div class="col-xs-12 col-md-8">
-              <h2><%= link_to g[:name], g %></h2>
+              <h2><%= link_to g[:name], game_path(g[:name]) %></h2>
               <br>
-              <%= g[:description] %>
+              <%= simple_format(g[:description].slice(0, 150)) %>
             </div>
             <div class="col-xs-12 col-md-4">
               <% @pictures = Picture.where("game_id" => g[:id]) %>
               <% if @pictures.empty? %>
-              <img src="<%= image_path("Placeholder.png") %>"/>
+                <%= link_to(image_tag(image_path("Placeholder.png")), game_path(g[:name])) %>
               <% else %>
-              <img src="<%= image_path(@pictures[0].image) %>"/>
+                <%= link_to(image_tag(image_path(@pictures[0].image)), game_path(g[:name])) %>
               <% end %>
             </div>
           </div>
-          <% if contador == @total -1 %>
-            <hr>
-          <% end %>
         </div>
       </div>
     <% end %>
     <% contador = contador + 1 %>
   <% end %>
+  <hr>
   <% if user_signed_in? %>
-    <div class="row wow fadeInLeft">
+    <div class="row">
         <div class="col-xs-12 col-md-12">
-            <button type="button"><%= link_to "Nuevo", new_game_path %></button>
+          <div class="btn">
+            <%= link_to "Nuevo", new_game_path, class: "button" %>
+          </div>
         </div>
     </div>
   <% end %>

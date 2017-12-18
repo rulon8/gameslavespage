@@ -1,4 +1,4 @@
-<div class="container wow fadeInUp titulo">
+<div class="container titulo">
   <div class="row justify-content-center">
     <div class="col-xs-12">
       <div class="section-header">
@@ -18,24 +18,88 @@
         <% end %>  
       </div>
   </div>
-  <div class="row wow fadeInUp">
-    <div class="col-xs-12 col-md-12">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 offset-md-2">
       <img src="<%= image_path("Chloe.png") %>" />
     </div>
   </div>
-  <div class="row wow fadeInUp">
+  <div class="row">
     <div class="col-xs-12 col-md-12">
-      <p>Hi guys! We are developing our next game. It would be a platformer action game with lots of puzzles, skills, cool art and so much more.</p>
+      <p>Hi guys! We are excited to announce we came up with a new idea of game that will be our next project. It would be a sportsgame with lots of characters, skins, a fun gameplay and many surprises!</p>
     </div>
   </div>
-  <div class="row wow fadeInUp">
+  <div class="row">
     <div class="col-xs-12 col-md-12">
-      <p>A long journey is upon us. This will be our longest and hardest game till now.</p>
+      <p>A new journey is upon us. This will be our hardest game till now. We are proving ourselfs with this game, but we hope it meets your expectations when we finish it!</p>
     </div>
   </div>
-  <div class="row wow fadeInUp">
+  <div class="row">
     <div class="col-xs-12 col-md-12">
-      <p>The game will have a lot of exciting things and we hope to have the demo ready for january 2018. Hope you guys stay in touch.</p>
+      <p>The game will have a lot of exciting things and we hope to have the demo ready by January 2018.</p>
     </div>
+  </div>
+   <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <p>Here you can find the latest video showing the work done so far. Also, we will post the link for the demo here when it is ready.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <p>You can find posts of our blog with the latest news and information about this game below. We hope you participate and tell us your opinions and suggestions.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <p>Stay tuned!</p>
+    </div>
+  </div>
+  <div class="videoWrapper">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/QYKTqISda5Q" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+  </div>
+  <div class="posts">
+    <% @posts.order("created_at DESC").each do |g| %>
+      <% if g[:tags] && g[:tags].include?("Waifu league (o)") %>
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <hr>
+            <div class="row">
+              <div class="col-xs-12 col-md-4">
+                <% @pictures = Picture.where("post_id" => g[:id]) %>
+                <% if @pictures.empty? %>
+                  <%= link_to(image_tag(image_path("Placeholder.png")), g) %>
+                <% else %>
+                  <%= link_to(image_tag(image_path(@pictures[0].image)), g) %>
+                <% end %>
+              </div>
+              <div class="col-xs-12 col-md-8">
+                <h2><%= link_to g[:title], g %></h2>
+                <div class="date">
+                  <small><%= g[:created_at].year %>-<%= g[:created_at].month %>-<%= g[:created_at].day %> &nbsp; &nbsp; by: <%= g.user[:username] %></small>
+                </div>
+                <% if g[:categories] %>
+                  <div class="categorias">
+                    <h5>Categories: </h5>
+                    <% g[:categories].each do |a| %>
+                      <h6><%= a %></h6>
+                    <% end %>
+                  </div>
+                <% end %>
+                <% if g[:tags] %>
+                  <div class="etiquetas">
+                    <h5>Tags: </h5>
+                    <% g[:tags].each do |b| %>
+                      <% if !b.include? "(o)" %>
+                        <h6><%= b %></h6>
+                      <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+                <p><%= simple_format(g[:description].slice(0,150) + "...") %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>

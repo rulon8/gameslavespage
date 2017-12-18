@@ -1,4 +1,4 @@
-<div class="container wow fadeInUp titulo">
+<div class="container titulo">
   <div class="row justify-content-center">
     <div class="col-xs-12">
       <div class="section-header">
@@ -8,9 +8,11 @@
   </div>
 </div>
 <section id="contacto">
-  <div class="container wow fadeInUp">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-md-8">
+        <p>If you have any suggestions, comments, or want to tell us something, please use this form to send an email to our official email account.</p>
+        <hr>
         <div class="form">
           <div id="errormessage"></div>
           <%= form_tag('/contact', html: {multiple: true, method: 'post'}) do %>
@@ -27,6 +29,8 @@
               <%= text_area_tag :message, nil, :class => "form-control", :placeholder => "Message", :rows => "10" %>
             </div>
             <%= submit_tag "Send message" %>
+            <br>
+            <br>
           <% end %>
         </div>
       </div>

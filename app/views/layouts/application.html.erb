@@ -14,8 +14,7 @@
   
     <!-- Favicons -->
     <link href="<%= image_path('favicon.png') %>" rel="icon">
-    <link href="<%= image_path('apple-touch-icon.png') %>" rel="apple-touch-icon">
-  
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
     
@@ -34,27 +33,31 @@
     <!--#menu-->
     <header id="header">
       <div class="container">
-  
-        <div id="logo" class="pull-left">
-          <a href="/"><img src="<%= image_path('gameslavesLogoTemp.png') %>" alt="" title="" /></a>
-          <!-- Uncomment below if you prefer to use a text logo -->
-          <!--<h1><a href="#hero">Regna</a></h1>-->
+        <div class="row">
+          <div class="col-6 col-sm-5 col-md-3">
+            <div id="logo" class="pull-left">
+              <a href="/"><img src="<%= image_path('Logo.png') %>" alt="" title="" /></a>
+              <!-- Uncomment below if you prefer to use a text logo -->
+              <!--<h1><a href="#hero">Regna</a></h1>-->
+            </div>
+          </div>
+          <div class="col-xs-3 col-md-9">
+            <nav id="nav-menu-container">
+              <ul class="nav-menu">
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "In Development", in_development_path %></li>
+                <li><%= link_to "Games", games_path %></li>
+                <li><%= link_to "Blog", blog_path %></li>
+                <li><%= link_to "About Us", about_path %></li>
+                <li><%= link_to "Contact Us", contact_path %></li>
+                <% if user_signed_in? %>
+                <li><%= link_to "Pictures", pictures_path %> </li>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                <% end %>
+              </ul>
+            </nav><!-- #nav-menu-container -->
+          </div>
         </div>
-  
-        <nav id="nav-menu-container">
-          <ul class="nav-menu">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "In Development", in_development_path %></li>
-            <li><%= link_to "Games", games_path %></li>
-            <li><%= link_to "Blog", blog_path %></li>
-            <li><%= link_to "About Us", about_path %></li>
-            <li><%= link_to "Contact Us", contact_path %></li>
-            <% if user_signed_in? %>
-            <li><%= link_to "Pictures", pictures_path %> </li>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-            <% end %>
-          </ul>
-        </nav><!-- #nav-menu-container -->
       </div>
     </header><!-- #header -->
     <%= yield %>
@@ -70,11 +73,10 @@
         <div class="row justify-content-center">
           <div class="col-xs-12">
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="https://www.facebook.com/gameslavesteam/" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="https://www.facebook.com/gameslavesteam/" class="facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/gameslavesteam/" class="instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://play.google.com/store/apps/developer?id=Gameslaves%20Team&hl=en" class="google-plus"><i class="fab fa-google-play"></i></a>
+              <a href="https://www.youtube.com/channel/UCV_-mTTU_npPzxreT-XNnXw" class="youtube"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>

@@ -30,6 +30,10 @@ h5, h6 {
   display: inline;
 }
 
+.posts h2 {
+  margin-bottom: 0;
+}
+
 .categorias h6, .etiquetas h6 {
   padding: 0 0.5em 0 0.5em;
 }
@@ -64,4 +68,8 @@ h5, h6 {
 
 div.paginacion {
   margin-bottom: 30px;
+}
+
+.date, .categorias, .etiquetas {
+  margin-bottom: 20px;
 }

@@ -36,17 +36,17 @@ Edit    /games/id/edit          X
 Update  /games/id               X
 Destroy /games/id               X
 
-Imagen  En veremos
-Show    /images/id
-New     /images/new
-Create  /images
+Imagen
+Index   /images                 X
+New     /images/new             X
+Create  /images                 X
 Edit    /image/id/edit
 Update  /images/id
-Destroy /images/id
+Destroy /images/id              X
                             Prioridad           Controlador        Vista
 MainController
-Main        /               DEFINIR                 X
-Developing  /developing
+Main        /               DEFINIR                 X               X
+Developing  /developing                             X               X
 Contact     /contact                                X               X
 About       /about                                  X               X
 Login       /login                                  X               X
@@ -57,12 +57,7 @@ vista de menu               DEFINIR                 X               X
 
 vista de footer             DEFINIR                 X               X
 
-Añadir columna in_front_page
-
 Pendiente
+U de imagenes, formulario de contacto (pruebas), contador de visitas, hosting, dominio, arreglar nombre imágenes
 
-Prioridad:
-CRUD de imagenes, estilo de paginacion, estilo de botones
-
-No prioridad:
-formulario de contacto (pruebas), Visitas
+textos en main, nombres en url, filtros posts, sticky post, 

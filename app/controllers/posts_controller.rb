@@ -1,15 +1,22 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-        @@etiqueta  = ["Art", "Gameplay","General", "Development"]
-        @@categoria = ["MOBA","Shooter", "News", "Platformer"]
+        @@etiqueta  = ["Art", "Gameplay","General", "Development", "Contests"]
+        @@categoria = ["MOBA","Shooter", "News", "Platformer", "SportsGame"]
+        @@etiquetaOculta = ["Waifu league (o)"] #NOTA: Se usa (o) para indicar en el código que no se muestra a los usuarios
         def index
-            @posts = Post.where.not(id: 5).page(params[:page]).per(3)
+            if params[:filtro]
+                @posts = Post.where("id != 5 and ('" + params[:filtro] + "' = ANY (categories) or '" + params[:filtro] + "' = ANY (tags))").order(sticky: :asc, created_at: :desc).page(params[:page]).per(3)
+            else
+                @posts = Post.where.not(id: 5).order(sticky: :asc, created_at: :desc).page(params[:page]).per(3)
+            end
+            @filtros = @@etiqueta + @@categoria
         end
         
         def new
             @post = Post.new
             @etiquetas = @@etiqueta
             @categorias = @@categoria
+            @etiquetasOcultas = @@etiquetaOculta
             @nombre = "Crear Post"
         end
         
@@ -21,8 +28,12 @@ class PostsController < ApplicationController
             @post[:date] = DateTime.now.strftime('%Y-%m-%d %H:%M:%S')
             @post[:description] = params[:post][:description]
             @post[:user_id] = current_user[:id]
+            @post[:sticky] = params[:post][:sticky]
             params.each do |a| 
                 if @@etiqueta.include? a
+                    @etiqTem.push(a)
+                end
+                if @@etiquetaOculta.include? a
                     @etiqTem.push(a)
                 end
                 if @@categoria.include? a
@@ -38,12 +49,21 @@ class PostsController < ApplicationController
         
         def show
             @post = Post.find(params[:id])
+            @first_post = Post.where.not(id: 5).order(created_at: :asc).limit(1)
+            @last_post = Post.where.not(id: 5).order(created_at: :desc).limit(1)
+            if @post == @first_post[0]
+               @primero = true 
+            end
+            if @post == @last_post[0]
+               @ultimo = true 
+            end
         end
         
         def edit
             @post = Post.find(params[:id])
             @etiquetas = @@etiqueta
             @categorias = @@categoria
+            @etiquetasOcultas = @@etiquetaOculta
             @nombre = "Editar Post"
         end
         
@@ -52,11 +72,14 @@ class PostsController < ApplicationController
             @categTem = Array.new
             @post = Post.find(params[:id])
             @post[:title] = params[:post][:title]
-            @post[:date] = DateTime.now.strftime('%Y-%m-%d %H:%M:%S')
             @post[:description] = params[:post][:description]
             @post[:user_id] = current_user[:id]
+            @post[:sticky] = params[:post][:sticky]
             params.each do |a| 
                 if @@etiqueta.include? a
+                    @etiqTem.push(a)
+                end
+                if @@etiquetaOculta.include? a
                     @etiqTem.push(a)
                 end
                 if @@categoria.include? a

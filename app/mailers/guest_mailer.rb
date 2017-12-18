@@ -5,7 +5,7 @@ class GuestMailer < ApplicationMailer
     @email = email
     @subject = subject
     @message = message
-    mail(from: 'support@gameslaves.com', to: 'giancalonghi@hotmail.com', subject: @subject)
+    mail(from: 'gameslavesteam@gmail.com', to: 'giancalonghi@hotmail.com', subject: 'New message from contact form')
   end
   
 end

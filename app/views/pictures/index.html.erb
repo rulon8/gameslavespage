@@ -1,8 +1,8 @@
-<div class="container wow fadeInUp titulo">
+<div class="container titulo">
   <div class="row justify-content-center">
     <div class="col-xs-12">
       <div class="section-header">
-        <h1 class="section-title">Imágenes</h1>
+        <h1 class="section-title">Pictures</h1>
       </div>
     </div>
   </div>
@@ -18,18 +18,25 @@
         <% end %>  
       </div>
   </div>
+  <% if user_signed_in? %>
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <%= link_to "Nuevo", new_picture_path, class: "button" %>
+        </div>
+    </div>
+  <% end %>
   <% @pictures.order("created_at DESC").each do |g| %>
-      <div class="row wow fadeInLeft">
+      <div class="row">
         <div class="col-xs-12 col-md-12">
           <hr>
           <div class="row">
             <div class="col-xs-12 col-md-4">
               <img src="<%= image_path(g[:image]) %>"/>
+               <%= link_to "Eliminar Imagen", picture_path(g[:id]), method: :delete, class: "button" %>
             </div>
             <div class="col-xs-12 col-md-8">
-              <h2><%= link_to g[:title], g %></h2>
+              <h2><%= g[:image] %></h2>
               <%= g[:description].slice(0,150) %>...
-              <button type="button"><%= link_to "Eliminar Imagen", picture_path(g[:id]), method: :delete %></button>
             </div>
           </div>
         </div>
@@ -37,13 +44,13 @@
   <% end %>
   <hr />
   <% if user_signed_in? %>
-    <div class="row wow fadeInLeft">
+    <div class="row">
         <div class="col-xs-12 col-md-12">
-            <button type="button"><%= link_to "Nuevo", new_picture_path %></button>
+            <%= link_to "Nuevo", new_picture_path, class: "button" %>
         </div>
     </div>
   <% end %>
-  <div class="row wow fadeInUp justify-content-center">
+  <div class="row justify-content-center">
     <div class="col-xs-12 col-md-12 paginacion">
       <%= paginate @pictures %>
       <br>

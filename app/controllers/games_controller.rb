@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:id])
+    @game = Game.where(name: params[:name]).first
     @pictures = Picture.where("game_id" => @game.id)
   end
 
@@ -19,6 +19,7 @@ class GamesController < ApplicationController
     @game[:name] = params[:game][:name]
     @game[:description] = params[:game][:description]
     @game[:information] = params[:game][:information]
+    @game[:features] = params[:game][:features]
     @game[:requirements] = params[:game][:requirements]
     @game.save
     redirect_to action: "index"
@@ -33,24 +34,26 @@ class GamesController < ApplicationController
     @game[:name] = params[:game][:name]
     @game[:description] = params[:game][:description]
     @game[:information] = params[:game][:information]
+    @game[:features] = params[:game][:features]
     @game[:requirements] = params[:game][:requirements]
     @game.save
-    redirect_to action: "show"
+    redirect_to "/game/" + @game[:name]
   end
 
   def destroy
     @game = Game.find(params[:id])
+    @pictures = Picture.where("game_id" => @game.id)
     if @game[:id] == 6
       redirect_to action: "index"
     else
+      if !@pictures.empty?
+        @pictures.each do |pic|
+          pic.destroy
+        end
+      end
       @game.destroy
       redirect_to action: "index"
     end
   end
   
-  def carrusel
-  end
-  
-  def prueba
-  end
 end
