@@ -58,6 +58,6 @@ vista de menu               DEFINIR                 X               X
 vista de footer             DEFINIR                 X               X
 
 Pendiente
-U de imagenes, formulario de contacto (pruebas), contador de visitas, hosting, dominio,
+U de imagenes, formulario de contacto (pruebas), hosting, dominio, menu hamburguesa, filtro all
 
-textos en main, nombres en url, filtros posts, sticky post, arreglar nombre imágenes
+textos en main, nombres en url, filtros posts, sticky post, arreglar nombre imágenes, paginacion en desarrollo, contador de visitas, visor de consultas

@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'main#main'
   devise_for :users, controllers: { sessions: 'users/sessions' }
-  get '/game/:name' => 'games#show', as: 'game'
-  patch '/game/:id' => 'games#update'
-  resources :games, except: :show
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :games
+  root to: 'main#main'
+  authenticate :user do
+    mount Blazer::Engine, at: "blazer"
+  end
+  patch '/game/:id' => 'games#update', except: :show
   resources :posts, except: :index
   resources :pictures
   get '/usuario' => 'main#usuario', as: 'usuario'

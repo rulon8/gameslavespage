@@ -11,7 +11,7 @@ class MainController < ApplicationController
     end
     
     def in_development
-      @posts = Post.all
+      @posts = Post.where("id != 5 and 'Waifu league (o)' = ANY (tags)").order(sticky: :asc, created_at: :desc).page(params[:page]).per(3)
     end
     
     def usuario
