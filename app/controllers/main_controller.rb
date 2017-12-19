@@ -3,8 +3,8 @@ class MainController < ApplicationController
         if user_signed_in? && current_user[:username] == nil
            redirect_to usuario_path() 
         end
-        @pictures = Picture.where(in_front_page: true).order(created_at: :desc).limit(4);
-        @posts = Post.order(created_at: :desc).limit(3);
+        @pictures = Picture.where(in_front_page: true).order(created_at: :desc).limit(4)
+        @posts = Post.order(created_at: :desc).limit(3)
     end
     
     def about
