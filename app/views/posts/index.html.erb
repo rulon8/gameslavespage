@@ -25,6 +25,9 @@
       <div class="col-12 paginacion">
         <nav class="paginacion">
           <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="/blog">All</a>
+            </li>
             <% @filtros.each do |fil| %>
               <li class="page-item">
                 <a class="page-link" href="?filtro=<%= fil %>"><%= fil %></a>
