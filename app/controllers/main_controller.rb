@@ -5,6 +5,7 @@ class MainController < ApplicationController
         end
         @pictures = Picture.where(in_front_page: true).order(created_at: :desc).limit(4)
         @posts = Post.order(created_at: :desc).limit(3)
+        @visitas = Visit.all.count
     end
     
     def about

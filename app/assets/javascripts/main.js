@@ -116,7 +116,7 @@ jQuery(document).ready(function( $ ) {
     time: 1000
   });
 
-// custom code
+  // custom code
   $(document).ready(function() {
       $('#slippry-slider').slippry(
         defaults = {
