@@ -251,9 +251,9 @@ DEPENDENCIES
   ahoy_matey
   blazer
   byebug
-  capistrano (>= 3.7.1)
-  capistrano-passenger
-  capistrano-rails
+  capistrano (~> 3.7, >= 3.7.1)
+  capistrano-passenger (~> 0.2.0)
+  capistrano-rails (~> 1.2)
   capistrano-rvm
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
