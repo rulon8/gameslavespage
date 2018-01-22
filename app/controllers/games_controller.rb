@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.where(name: params[:name]).first
+    @game = Game.where(name: params[:id]).first
     @pictures = Picture.where("game_id" => @game.id)
   end
 
