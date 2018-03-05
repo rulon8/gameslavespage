@@ -10,6 +10,9 @@ git commit -m "Longhi es un feeder"
 git pull
 git push
 
+----- Update Hosting
+cap production deploy
+
 -----Comandos postresql
 psql -U ubuntu -d gameslavespage_development -c "INSERT INTO users VALUES (2, 'Rulon','pass','giancalonghi@hotmail.com', '2017-11-24', '2017-11-24')"
 psql -U ubuntu -d gameslavespage_development -c 'SELECT * FROM users'
