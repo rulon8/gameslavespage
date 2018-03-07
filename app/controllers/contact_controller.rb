@@ -5,15 +5,13 @@ class ContactController < ApplicationController
     end
     
     def enviar
-      @name = params[:name]
-      @email = params[:email]
-      @subject = params[:subject]
-      @message = params[:message]
+      name = params[:name]
+      email = params[:email]
+      subject = params[:subject]
+      message = params[:message]
+      tosend = "admin@gameslavesteam.com"
       #GuestMailer.enviar(name, email, subject, message)
-      mail(to: "admin@gameslavesteam.com") do |format|
-        format.html { render layout: 'enviar' }
-        format.text
-      end
+      mail(:to => tosend, :subject => params[:subject], :text => params[:message] )
       redirect_to action: "contact"  
     end
 end
