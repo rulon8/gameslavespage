@@ -14,6 +14,6 @@ class ContactController < ApplicationController
       GuestMailer.enviar(name, email, subject, message)
       #mail(:to => tosend, :subject => params[:subject], :text => params[:message] )
       #correo(@name, @email, @subject, @message, @tosend).deliver
-      redirect_to action: "contact"  
+      redirect_to root_path  
     end
 end
