@@ -5,7 +5,7 @@ class GuestMailer < ApplicationMailer
     @email = email
     @subject = subject
     @message = message
-    #mail( :to 'gameslavesteam@gmail.com', :subject 'Contacto')
+    mail( :to 'gameslavesteam@gmail.com', :subject 'Contacto')
   end
   
 end
