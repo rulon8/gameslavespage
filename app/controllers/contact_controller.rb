@@ -10,7 +10,7 @@ class ContactController < ApplicationController
       email = params[:email]
       subject = params[:subject]
       message = params[:message]
-      GuestMailer.enviar(name, email, subject, message).deliver_now
+      GuestMailer.enviar(name, email, subject, message).deliver
       #GuestMailer.enviar(name, email, subject, message).deliver
       #mail(:to => tosend, :subject => params[:subject], :text => params[:message] )
       #correo(@name, @email, @subject, @message, @tosend).deliver
