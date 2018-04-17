@@ -95,8 +95,8 @@ Rails.application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => "gameslavesteam.com",
-    :user_name            => ENV['gmail_username'],
-    :password             => ENV['gmail_password'],
+    :user_name            => "admin@gameslavesteam.com",
+    :password             => "",
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
