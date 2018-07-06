@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
         @@etiqueta  = ["Art", "Gameplay","General", "Development", "Contests"]
-        @@categoria = ["MOBA","Shooter", "News", "Platformer", "SportsGame"]
-        @@etiquetaOculta = ["Waifu league (o)"] #NOTA: Se usa (o) para indicar en el código que no se muestra a los usuarios
+        @@categoria = ["MOBA","Shooter", "News", "Hack/Slash", "SportsGame"]
+        @@etiquetaOculta = ["Waifu Hunter (o)"] #NOTA: Se usa (o) para indicar en el código que no se muestra a los usuarios
         def index
             if params[:filtro]
                 @posts = Post.where("id != 5 and ('" + params[:filtro] + "' = ANY (categories) or '" + params[:filtro] + "' = ANY (tags))").order(sticky: :asc, created_at: :desc).page(params[:page]).per(3)
