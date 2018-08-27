@@ -33,7 +33,6 @@
     <% else %>
       <div class="col-xs-12 col-md-8 offset-md-2">
     <% end %>
-     <% @pictures = Picture.where("post_id" => @post.id) %>
      <% if @pictures.empty? %>
         <img src="<%= image_path("Placeholder.png") %>"/>
      <% else %>

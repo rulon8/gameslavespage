@@ -49,6 +49,7 @@ class PostsController < ApplicationController
         
         def show
             @post = Post.find(params[:id])
+            @pictures = Picture.where("post_id" => @post.id) 
             @first_post = Post.where.not(id: 5).order(created_at: :asc).limit(1)
             @last_post = Post.where.not(id: 5).order(created_at: :desc).limit(1)
             if @post == @first_post[0]
