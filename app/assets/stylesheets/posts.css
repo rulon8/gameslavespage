@@ -57,4 +57,7 @@ div.paginacion {
 .date, .categorias, .etiquetas {
   margin-bottom: 20px; }
 
+.form-text-area {
+  min-height: 100px; }
+
 /*# sourceMappingURL=posts.css.map */
