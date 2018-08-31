@@ -89,14 +89,12 @@
       <div class="fb-comments" data-href="https://gameslaves-rulon.c9users.io/posts/<%= @post[:id] %>" data-width="100%" data-numposts="5"></div>
     </div>
   </div>
-    <% if user_signed_in? %>
      <div class="row justify-content-center counters">
         				<div class="col-xs-12 text-center">
-                  <h2 data-toggle="counter-up"><%= @visitas %></h2>
+                  <span data-toggle="counter-up"><%= @visitas %></span>
                   <h2>Visits</h2>
         				</div>
         				</div>
-  <% end %>
   <div class="row">
     <div class="col-xs-12 col-md-12 paginacion">
   
