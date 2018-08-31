@@ -84,6 +84,19 @@
     </div>
       <hr />
   <% end %>
+   <section id="facts">
+              <div class="section-header">
+                <h3 class="section-title">Facts</h3>
+              </div>
+              <div class="row justify-content-center counters">
+      
+        				<div class="col-xs-12 text-center">
+                  <span data-toggle="counter-up"><%= @visitas %></span>
+                  <h2>Visits</h2>
+        				</div>
+      
+        			</div>
+  </section><!-- #facts -->
   <div class="row">
     <div class="col-xs-12 col-md-12">
       <div class="fb-comments" data-href="https://gameslaves-rulon.c9users.io/posts/<%= @post[:id] %>" data-width="100%" data-numposts="5"></div>
