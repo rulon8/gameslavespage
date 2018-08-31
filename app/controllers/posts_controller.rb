@@ -18,6 +18,7 @@ class PostsController < ApplicationController
             @categorias = @@categoria
             @etiquetasOcultas = @@etiquetaOculta
             @nombre = "Crear Post"
+            @visitasPost = Visit.all.count
         end
         
         def create
