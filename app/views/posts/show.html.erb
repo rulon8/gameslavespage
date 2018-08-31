@@ -90,9 +90,11 @@
     </div>
   </div>
     <% if user_signed_in? %>
+     <div class="row justify-content-center counters">
         				<div class="col-xs-12 text-center">
                   <h2 data-toggle="counter-up"><%= @visitas %></h2>
                   <h2>Visits</h2>
+        				</div>
         				</div>
   <% end %>
   <div class="row">
