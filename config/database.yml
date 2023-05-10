@@ -83,5 +83,5 @@ test:
 production:
   <<: *default
   database: gameslavespage_production
-  username: gameslavespage
+  username: deploy
   password: <%= ENV['GAMESLAVESPAGE_DATABASE_PASSWORD'] %>
