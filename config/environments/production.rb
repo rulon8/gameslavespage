@@ -94,10 +94,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => "gameslavesteam.com",
-    :user_name            => "admin@gameslavesteam.com",
-    :password             => "",
-    :authentication       => "plain",
+    :domain               => "gmail.com",
+    :user_name            => "gameslavesteam@gmail.com",
+    :password             => "Annielover69",
+    :authentication       => "login",
     :enable_starttls_auto => true
   }
 end
